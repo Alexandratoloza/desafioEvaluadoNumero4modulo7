@@ -79,7 +79,7 @@
 <script>
   let url = "/canciones";
   let tbody = document.getElementById("cuerpo");
-  let cancion = document.getElementById("cancion");
+  let titulo = document.getElementById("titulo");
   let artista = document.getElementById("artista");
   let tono = document.getElementById("tono");
 
@@ -108,17 +108,17 @@
       `;
       });
     });
-    cancion.value = "";
+    titulo.value = "";
     artista.value = "";
     tono.value = "";
   }
 
   function nuevaCancion() {
-    cancion;
+    titulo;
     artista;
     tono;
     let data = {
-      titulo: cancion.value,
+      titulo: titulo.value,
       artista: artista.value,
       tono: tono.value,
     };

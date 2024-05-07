@@ -1,7 +1,6 @@
 {
   "name": "otrointento",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -19,5 +18,6 @@
     "express": "^4.19.2",
     "nanoid": "^5.0.7",
     "pg": "^8.11.5"
-  }
+  },
+  "description": ""
 }
