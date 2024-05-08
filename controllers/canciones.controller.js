@@ -41,6 +41,6 @@ export const updateCancion = async (req, res) => {
         return res.json(cancion)
     } catch (error) {
         console.log(error)
-        return res.status(500).send()
+        return res.status(500).json(error)
     }
 }
