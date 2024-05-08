@@ -19,6 +19,19 @@ const create = async ({ Titulo, Artista ,Tono }) => {
 }
 
 
+
+const remove = async (id) => {
+    const query = {
+        text: `
+        DELETE FROM canciones WHERE id = $1;
+        
+        `,
+        values: [id]
+    }
+    const { rows } = await pool.query(query)
+    return rows[0]
+}
+
 const update = async ({ Titulo, Artista ,Tono }) => {
     const query = {
         text: `UPDATE canciones SET
@@ -27,28 +40,15 @@ const update = async ({ Titulo, Artista ,Tono }) => {
         Tono = $3
         WHERE Titulo = $4
         RETURNING *`,
-        values: [ Titulo, Artista ,Tono, Titulo ]
+        values: [ id, Titulo, Artista, Tono ]
     }
 
     const { rows } = await pool.query(query)
     return rows[0]
 }
-
-const remove = async (id) => {
-    const query = {
-        text: `
-        DELETE FROM canciones WHERE id = $1;
-
-        `,
-        values: [id]
-    }
-    const { rows } = await pool.query(query)
-    return rows[0]
-}
-
 export const Cancion = {
     findAll,
     create,
+    remove,
     update, 
-    remove
 }

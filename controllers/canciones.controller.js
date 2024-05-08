@@ -35,9 +35,9 @@ export const removeCancion = async (req, res) => {
 
 export const updateCancion = async (req, res) => {
     try {
-        const { id } = req.params 
+       
         const {  Titulo, Artista, Tono} = req.body
-        const cancion = await Cancion.update({ id,  Titulo, Artista, Tono})
+        const cancion = await Cancion.update({ Titulo, Artista, Tono})
         return res.json(cancion)
     } catch (error) {
         console.log(error)
